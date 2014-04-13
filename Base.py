@@ -2,16 +2,18 @@
 from time import ctime
 import PlayerAct
 
-#============================================================================================================
+#=====================================================
+class CardError(Exception):
+    pass
 
-
+#=====================================================
 class Game(object):
-    def __init__(self,pnum,gname=''):
+    def __init__(self,pnum=0,gname=''):
         self.state=''
         self.player_num=pnum
         self.name=gname  #game name
         self.talk_log=[]# talk_log=[(id,talking)]
-    pass
+    
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -63,9 +65,11 @@ class Card(object):
     def __init__(self,cardname):
         self.name=cardname
         self.cat='' #card category
-        self.whos=-1 #the id of this card's owner
+        self._whos=-1 #the id of this card's owner
     def whos_card(self):
-        return self.whos
+        return self._whos
+    def set_whos(self,player):
+        self._whos=player.id
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++
 class RoleCard(Card):
@@ -73,8 +77,9 @@ class RoleCard(Card):
         super(RoleCard,self).__init__(self,name)
         self.cat="Role Card"
 #++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
+class MarkerCard(Card):
+    def __init__(self,name)
+        super(MarkerCard,self).__init__(self,name)
 
 
 #============================================================================================================
