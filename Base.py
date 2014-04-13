@@ -78,7 +78,7 @@ class RoleCard(Card):
         self.cat="Role Card"
 #++++++++++++++++++++++++++++++++++++++++++++++++++++
 class MarkerCard(Card):
-    def __init__(self,name)
+    def __init__(self,name):
         super(MarkerCard,self).__init__(self,name)
 
 
