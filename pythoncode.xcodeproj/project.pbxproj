@@ -11,6 +11,7 @@
 		A99B89ED18F93368000BC68F /* GameKill.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = GameKill.py; sourceTree = "<group>"; };
 		A99B89EE18F94408000BC68F /* server.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = server.py; sourceTree = "<group>"; };
 		A99B89F118F9749C000BC68F /* test.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = test.py; sourceTree = "<group>"; };
+		A99B89F218FA299B000BC68F /* PlayerAct.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = PlayerAct.py; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -18,6 +19,7 @@
 			isa = PBXGroup;
 			children = (
 				A99B89EC18F93368000BC68F /* Base.py */,
+				A99B89F218FA299B000BC68F /* PlayerAct.py */,
 				A99B89EE18F94408000BC68F /* server.py */,
 				A99B89ED18F93368000BC68F /* GameKill.py */,
 				A99B89F118F9749C000BC68F /* test.py */,
