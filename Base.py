@@ -2,15 +2,16 @@
 from time import ctime
 import PlayerAct
 
-#=====================================================
+#==================ERROR===================================
 class CardError(Exception):
     pass
 
-#=====================================================
+#==================CLASS===================================
 class Game(object):
     def __init__(self,pnum=0,gname=''):
         self.state=''
-        self.player_num=pnum
+        self.all_player_num=pnum
+        self.in_player_num=pnum
         self.name=gname  #game name
         self.talk_log=[]# talk_log=[(id,talking)]
         game_player={}
@@ -19,17 +20,21 @@ class Game(object):
             return False
         else:
             self.game_player[pl.id]=True
-            self.player_num+=1
+            self.all_player_num+=1
+            self.in_player_num+=1
             return True
-    def kick_he(self,pl):
+    def kick(self,pl):
         if pl.id in self.game_player:
-            del self.game_player[pl.id]
+            if self.game_player.pop(pl.id):
+                self.in_player_num-=1
+            self.player_num-=1
             return True
         else:
             return False #NO SUCH PERSON
-    def kill_he(self,pl):
-        if pl.id in self.game_player:
+    def kill(self,pl):
+        if (pl.id in self.game_player) and self.game_player[pl.id]: #you can't kill sb twice
             self.game_player[pl.id]=False
+            in_player_num-=1
             return True
         else:
             return False
@@ -65,8 +70,9 @@ class Player(object):
                 i=self.cards.index(card)
             except ValueError:
                 return False
-            self.card_hist.append(self.cards.pop(i))
-        return True
+            else:
+                self.card_hist.append(self.cards.pop(i))
+                return True
 
     def get_id(self):
         return self.id
@@ -111,13 +117,13 @@ class MarkerCard(Card):
         super(MarkerCard,self).__init__(self,cardname,"Marker Card",whos)
 
 
-#============================================================================================================
+#==============FUNC======================================
 def open_game(*arg,**argkw):
     "initiate the game by sending cards to players"
     pass
 
 
-#============================================================================================================
+#========================================================
 if __name__=="__main__":
     print 'biuld succeed'
     p1=Player(idnum=12)
