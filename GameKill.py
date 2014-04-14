@@ -11,6 +11,7 @@ class CardNumError(Base.CardError):
 
 
 #=============CLASS=======================
+
 class GM_kill(Base.Game):
     cards=['']
     def __init__(self,pnum=0):
@@ -19,7 +20,9 @@ class GM_kill(Base.Game):
     def set_max(w, v):
         maxwolf=w
         maxvillager=v
+
 #+++++++++++++++++++++++++++
+
 class Wolf(Base.RoleCard):
     left_wolfs=range(1,maxwolf)
     def __init__(self,wlfnum,whos=None):
@@ -35,7 +38,9 @@ class Wolf(Base.RoleCard):
     def vote2exc(self,id):
         "vote to exc the killer"
         pass #!only alive can vote
+
 #+++++++++++++++++++++++++++
+
 class Villager(Base.RoleCard):
     left_villagers=range(1,maxvillager)
     def __init__(self,vlgnum,whos=None):
@@ -46,7 +51,9 @@ class Villager(Base.RoleCard):
             raise CardNumError
     def vote2exc(self,id):
         pass #only alive can vote
+
 #++++++++++++++++++++++++++++
+
 class Couple(Base.MarkerCard):
     left_couple=[1,2]
     def __init__(self,num,whos=None):
@@ -60,6 +67,7 @@ class Couple(Base.MarkerCard):
     def kill_my_lover(self):
         is_firstkilled=True #i'm the first killed
         pass #! shall we public who are the lovers after death?
+
 #++++++++++++++++++++++++++++
 
 class Prophet(Villager):
@@ -83,6 +91,7 @@ class Prophet(Villager):
             return self.roleknown[pl.id]
         except KeyError:
             return False
+
 #++++++++++++++++++++++++++++
 
 class Girl(Villager):
@@ -105,6 +114,8 @@ class Hunter(Villager):
              pass  #! kill(pl)
         return True
 
+#++++++++++++++++++++++++++++
+
 class Witcher(Villager):
     def __init__(self,vlgnum,whos=None):
         super(Witcher,self).__init__(self,vlgnum,whos=None)
@@ -118,6 +129,22 @@ class Witcher(Villager):
         if self.poinson:
             self.poinson-=1
             pass
+
+#++++++++++++++++++++++++++++
+
+class Guard(Villager):
+    def __init__(self,vlgnum,whos=None):
+        super(Guard, self).__init__(self,vlgnum,whos=None)
+        last_guard=None
+    def guard_he(self,pl):
+        if not (pl is self.last_guard):
+            self.last_guard=pl
+            pass # guard pl
+            return True
+        else:
+            return False
+
+#++++++++++++++++++++++++++++
 
 
 #=========FUNC====================
