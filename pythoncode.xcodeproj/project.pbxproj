@@ -7,22 +7,24 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		A99B89EC18F93368000BC68F /* Base.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = Base.py; sourceTree = "<group>"; };
-		A99B89ED18F93368000BC68F /* GameKill.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = GameKill.py; sourceTree = "<group>"; };
-		A99B89EE18F94408000BC68F /* server.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = server.py; sourceTree = "<group>"; };
-		A99B89F118F9749C000BC68F /* test.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = test.py; sourceTree = "<group>"; };
-		A99B89F218FA299B000BC68F /* PlayerAct.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = PlayerAct.py; sourceTree = "<group>"; };
+		A91189BE18FC058E00BEA768 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		A91189BF18FC058E00BEA768 /* Base.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = Base.py; sourceTree = "<group>"; };
+		A91189C018FC058E00BEA768 /* GameKill.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = GameKill.py; sourceTree = "<group>"; };
+		A91189C118FC058E00BEA768 /* PlayerAct.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = PlayerAct.py; sourceTree = "<group>"; };
+		A91189C218FC058E00BEA768 /* server.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = server.py; sourceTree = "<group>"; };
+		A91189C318FC058E00BEA768 /* test.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = test.py; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		A902885518F7A3DE00CDB506 = {
 			isa = PBXGroup;
 			children = (
-				A99B89EC18F93368000BC68F /* Base.py */,
-				A99B89F218FA299B000BC68F /* PlayerAct.py */,
-				A99B89EE18F94408000BC68F /* server.py */,
-				A99B89ED18F93368000BC68F /* GameKill.py */,
-				A99B89F118F9749C000BC68F /* test.py */,
+				A91189BE18FC058E00BEA768 /* README.md */,
+				A91189BF18FC058E00BEA768 /* Base.py */,
+				A91189C018FC058E00BEA768 /* GameKill.py */,
+				A91189C118FC058E00BEA768 /* PlayerAct.py */,
+				A91189C218FC058E00BEA768 /* server.py */,
+				A91189C318FC058E00BEA768 /* test.py */,
 			);
 			sourceTree = "<group>";
 		};
