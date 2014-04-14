@@ -13,7 +13,32 @@ class Game(object):
         self.player_num=pnum
         self.name=gname  #game name
         self.talk_log=[]# talk_log=[(id,talking)]
-    
+        game_player={}
+    def add_player(self,pl):
+        if pl.id in self.game_player:
+            return False
+        else:
+            self.game_player[pl.id]=True
+            self.player_num+=1
+            return True
+    def kick_he(self,pl):
+        if pl.id in self.game_player:
+            del self.game_player[pl.id]
+            return True
+        else:
+            return False #NO SUCH PERSON
+    def kill_he(self,pl):
+        if pl.id in self.game_player:
+            self.game_player[pl.id]=False
+            return True
+        else:
+            return False
+
+
+
+
+
+
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -25,12 +50,12 @@ class Player(object):
         self.can_act=False #if the player  can do action
         self.saying=(-1,'')   #present talkind words. say '' at time '-1'
         self.said=[]    #talking history
-        self.state=st # indicating if the player is in the game
+        self.state=st # indicating if the player is in his turn to act in the game
         self.id=idnum
-    
+        self.other_player={} #a dictionary (id:'name')
     def add_card(self, card):
         self.cards.append(card)
-        return 0
+        return True
     def del_card(self, card=None):
         "delete card from cards and add it to card_hist, if card not specified del the last one. if succeed return 0 else -1"
         if card==None:
@@ -39,9 +64,9 @@ class Player(object):
             try:
                 i=self.cards.index(card)
             except ValueError:
-                return -1
+                return False
             self.card_hist.append(self.cards.pop(i))
-        return 0
+        return True
 
     def get_id(self):
         return self.id
@@ -49,7 +74,10 @@ class Player(object):
         return [cd.name for cd in self.cards]
     def get_cards_histname(self):
         return [cd.name for cd in self.cards_hist]
-
+    def has_card(self,card):
+        return card in self.cards
+    def change_state():
+        pass
     def action(self,act):
         "the player can do some actions for example select cards"
         #act is a function let player to do something suc return 0 else -1
@@ -62,30 +90,31 @@ class Card(object):
     "the card should can take information and send information"
     actions=[] #the card can do something
     props=[] # the card has some properties  shoud be dictionay
-    def __init__(self,cardname):
+    def __init__(self,cardname,ccat='',whos=None):
         self.name=cardname
-        self.cat='' #card category
-        self._whos=-1 #the id of this card's owner
+        self.cat=ccat #card category
+        self.whos=whos # card's owner
     def whos_card(self):
-        return self._whos
+        "return owner's id"
+        return self.whos.id
     def set_whos(self,player):
-        self._whos=player.id
+        self._whos=player
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++
 class RoleCard(Card):
-    def __init__(self,name):
-        super(RoleCard,self).__init__(self,name)
-        self.cat="Role Card"
+    def __init__(self,cardname,whos=None):
+        super(RoleCard,self).__init__(self,cardname,"Role Card",whos)
+
 #++++++++++++++++++++++++++++++++++++++++++++++++++++
 class MarkerCard(Card):
-    def __init__(self,name):
-        super(MarkerCard,self).__init__(self,name)
+    def __init__(self,cardname,whos=None):
+        super(MarkerCard,self).__init__(self,cardname,"Marker Card",whos)
 
 
 #============================================================================================================
 def open_game(*arg,**argkw):
     "initiate the game by sending cards to players"
-
+    pass
 
 
 #============================================================================================================
