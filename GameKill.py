@@ -23,15 +23,16 @@ class Wolf(Base.RoleCard):
     def __init__(self,wlfnum,whos=None):
         super(Wolf,self).__init__(cardname="Wolf",whos=whos)
         if wlfnum in left_wolfs:
-            self.wolfnum=left_wolfs.pop(wolfnum-1)
+            self.wlfnum=left_wolfs.pop(wlfnum-1)
         else:
             raise CardNumError
     def vote2kill(self,id):
         "vote to kill someone(id)" #send a signal to the host tell and tell other self._whos voted
-        pass
+        pass #only alive can vote
+    
     def vote2exc(self,id):
         "vote to exc the killer"
-        pass
+        pass #only alive can vote
 #+++++++++++++++++++++++++++
 class Villager(Base.RoleCard):
     left_villagers=range(1,maxvillager)
@@ -41,7 +42,8 @@ class Villager(Base.RoleCard):
             self.vlgnum=left_villagers.pop(vlgnum-1)
         else:
             raise CardNumError
-    def vote2exc(self,id)
+    def vote2exc(self,id):
+        pass #only alive can vote
 #++++++++++++++++++++++++++++
 class Couple(Base.MarkerCard):
     left_couple=[1,2]
@@ -51,7 +53,9 @@ class Couple(Base.MarkerCard):
             self.num=left_couple.pop(num-1)
         else:
             raise CardNumError
-    #here may needs to right a iterator to find who is the lover
+    #!here may needs to right a iterator to find who is the lover
+    def kill_my_lover(self):
+        pass #! shall we public the who are the lovers after death?
 #++++++++++++++++++++++++++++
 
 class Prophet(Villager):
