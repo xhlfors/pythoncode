@@ -10,6 +10,7 @@
 		A91189CC18FCDF8200BEA768 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A91189CB18FCDF8200BEA768 /* main.c */; };
 		A91189CE18FCDF8200BEA768 /* audio.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A91189CD18FCDF8200BEA768 /* audio.1 */; };
 		A91189D318FCE07600BEA768 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91189D218FCE07600BEA768 /* OpenAL.framework */; };
+		A91189D518FD59A000BEA768 /* OpenAL_Exemple.c in Sources */ = {isa = PBXBuildFile; fileRef = A91189D418FD59A000BEA768 /* OpenAL_Exemple.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +37,7 @@
 		A91189CB18FCDF8200BEA768 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		A91189CD18FCDF8200BEA768 /* audio.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = audio.1; sourceTree = "<group>"; };
 		A91189D218FCE07600BEA768 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		A91189D418FD59A000BEA768 /* OpenAL_Exemple.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OpenAL_Exemple.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				A91189CB18FCDF8200BEA768 /* main.c */,
+				A91189D418FD59A000BEA768 /* OpenAL_Exemple.c */,
 				A91189CD18FCDF8200BEA768 /* audio.1 */,
 			);
 			path = audio;
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A91189CC18FCDF8200BEA768 /* main.c in Sources */,
+				A91189D518FD59A000BEA768 /* OpenAL_Exemple.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +303,7 @@
 				A91189D118FCDF8200BEA768 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
