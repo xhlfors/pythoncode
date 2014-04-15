@@ -6,6 +6,25 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A91189CC18FCDF8200BEA768 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A91189CB18FCDF8200BEA768 /* main.c */; };
+		A91189CE18FCDF8200BEA768 /* audio.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A91189CD18FCDF8200BEA768 /* audio.1 */; };
+		A91189D318FCE07600BEA768 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91189D218FCE07600BEA768 /* OpenAL.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A91189C618FCDF8200BEA768 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				A91189CE18FCDF8200BEA768 /* audio.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A91189BE18FC058E00BEA768 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		A91189BF18FC058E00BEA768 /* Base.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = Base.py; sourceTree = "<group>"; };
@@ -13,19 +32,54 @@
 		A91189C118FC058E00BEA768 /* PlayerAct.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = PlayerAct.py; sourceTree = "<group>"; };
 		A91189C218FC058E00BEA768 /* server.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = server.py; sourceTree = "<group>"; };
 		A91189C318FC058E00BEA768 /* test.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = test.py; sourceTree = "<group>"; };
+		A91189C818FCDF8200BEA768 /* audio */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = audio; sourceTree = BUILT_PRODUCTS_DIR; };
+		A91189CB18FCDF8200BEA768 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		A91189CD18FCDF8200BEA768 /* audio.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = audio.1; sourceTree = "<group>"; };
+		A91189D218FCE07600BEA768 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A91189C518FCDF8200BEA768 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A91189D318FCE07600BEA768 /* OpenAL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		A902885518F7A3DE00CDB506 = {
 			isa = PBXGroup;
 			children = (
+				A91189D218FCE07600BEA768 /* OpenAL.framework */,
 				A91189BE18FC058E00BEA768 /* README.md */,
 				A91189BF18FC058E00BEA768 /* Base.py */,
 				A91189C018FC058E00BEA768 /* GameKill.py */,
 				A91189C118FC058E00BEA768 /* PlayerAct.py */,
 				A91189C218FC058E00BEA768 /* server.py */,
 				A91189C318FC058E00BEA768 /* test.py */,
+				A91189CA18FCDF8200BEA768 /* audio */,
+				A91189C918FCDF8200BEA768 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		A91189C918FCDF8200BEA768 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A91189C818FCDF8200BEA768 /* audio */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A91189CA18FCDF8200BEA768 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				A91189CB18FCDF8200BEA768 /* main.c */,
+				A91189CD18FCDF8200BEA768 /* audio.1 */,
+			);
+			path = audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -46,6 +100,26 @@
 		};
 /* End PBXLegacyTarget section */
 
+/* Begin PBXNativeTarget section */
+		A91189C718FCDF8200BEA768 /* audio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A91189CF18FCDF8200BEA768 /* Build configuration list for PBXNativeTarget "audio" */;
+			buildPhases = (
+				A91189C418FCDF8200BEA768 /* Sources */,
+				A91189C518FCDF8200BEA768 /* Frameworks */,
+				A91189C618FCDF8200BEA768 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = audio;
+			productName = audio;
+			productReference = A91189C818FCDF8200BEA768 /* audio */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
 /* Begin PBXProject section */
 		A902885618F7A3DE00CDB506 /* Project object */ = {
 			isa = PBXProject;
@@ -61,13 +135,26 @@
 				en,
 			);
 			mainGroup = A902885518F7A3DE00CDB506;
+			productRefGroup = A91189C918FCDF8200BEA768 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				A902885A18F7A3DE00CDB506 /* pythoncode */,
+				A91189C718FCDF8200BEA768 /* audio */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A91189C418FCDF8200BEA768 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A91189CC18FCDF8200BEA768 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
 		A902885B18F7A3DE00CDB506 /* Debug */ = {
@@ -102,6 +189,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -161,6 +253,24 @@
 			};
 			name = Release;
 		};
+		A91189D018FCDF8200BEA768 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A91189D118FCDF8200BEA768 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -181,6 +291,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A91189CF18FCDF8200BEA768 /* Build configuration list for PBXNativeTarget "audio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A91189D018FCDF8200BEA768 /* Debug */,
+				A91189D118FCDF8200BEA768 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

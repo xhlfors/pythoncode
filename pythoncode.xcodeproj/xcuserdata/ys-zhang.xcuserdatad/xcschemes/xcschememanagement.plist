@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>audio.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>pythoncode.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -28,6 +33,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>A902885A18F7A3DE00CDB506</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A91189C718FCDF8200BEA768</key>
 		<dict>
 			<key>primary</key>
 			<true/>

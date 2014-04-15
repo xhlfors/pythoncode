@@ -14,7 +14,7 @@ class Game(object):
         self.in_player_num=pnum
         self.name=gname  #game name
         self.talk_log=[]# !talk_log=[(id,talking)]
-        game_player={}
+        game_player={}  #{id:True}
     def add_player(self,pl):
         if pl.id in self.game_player:
             return False
@@ -23,7 +23,7 @@ class Game(object):
             self.all_player_num+=1
             self.in_player_num+=1
             return True
-    def kick(self,pl):
+    def kick_player(self,pl):
         if pl.id in self.game_player:
             if self.game_player.pop(pl.id):
                 self.in_player_num-=1
@@ -31,7 +31,7 @@ class Game(object):
             return True
         else:
             return False #NO SUCH PERSON
-    def kill(self,pl):
+    def kill_player(self,pl):
         if (pl.id in self.game_player) and self.game_player[pl.id]: #you can't kill sb twice
             self.game_player[pl.id]=False
             in_player_num-=1
@@ -49,6 +49,7 @@ class Game(object):
 
 class Player(object):
     "the player may can 'speak'"
+    game=None
     def __init__(self,idnum,st=False):
         self.cards=[]    #card at hand
         self.card_hist=[]
@@ -88,6 +89,12 @@ class Player(object):
         "the player can do some actions for example select cards"
         #act is a function let player to do something suc return 0 else -1
         return act(self)
+    def set_game(self,gm):
+        if isinstance(Game,gm):
+            game=gm
+        else:
+            # please input a game
+            pass
 
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -109,12 +116,12 @@ class Card(object):
 #++++++++++++++++++++++++++++++++++++++++++++++++++++
 class RoleCard(Card):
     def __init__(self,cardname,whos=None):
-        super(RoleCard,self).__init__(self,cardname,"Role Card",whos)
+        super(RoleCard,self).__init__(cardname,"Role Card",whos)
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++
 class MarkerCard(Card):
     def __init__(self,cardname,whos=None):
-        super(MarkerCard,self).__init__(self,cardname,"Marker Card",whos)
+        super(MarkerCard,self).__init__(cardname,"Marker Card",whos)
 
 
 #==============FUNC======================================

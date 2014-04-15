@@ -15,7 +15,7 @@ class CardNumError(Base.CardError):
 class GM_kill(Base.Game):
     cards=['']
     def __init__(self,pnum=0):
-        super(GM_kill, self).__init__(self,pnum,"KillingGame")
+        super(GM_kill, self).__init__(pnum,"KillingGame")
         cards.append(MarkerCard("Shrief"))
     def set_max(w, v):
         maxwolf=w
@@ -25,6 +25,7 @@ class GM_kill(Base.Game):
 
 class Wolf(Base.RoleCard):
     left_wolfs=range(1,maxwolf)
+    vote2kill_result=[]
     def __init__(self,wlfnum,whos=None):
         super(Wolf,self).__init__(cardname="Wolf",whos=whos)
         if wlfnum in left_wolfs:
@@ -38,6 +39,8 @@ class Wolf(Base.RoleCard):
     def vote2exc(self,id):
         "vote to exc the killer"
         pass #!only alive can vote
+            #!every day vote only once
+            #!vote history should can be checked
 
 #+++++++++++++++++++++++++++
 
@@ -50,7 +53,9 @@ class Villager(Base.RoleCard):
         else:
             raise CardNumError
     def vote2exc(self,id):
-        pass #only alive can vote
+        "vote to exc the killer"
+        pass #!only alive can vote
+
 
 #++++++++++++++++++++++++++++
 
@@ -72,7 +77,7 @@ class Couple(Base.MarkerCard):
 
 class Prophet(Villager):
     def __init__(self,vlgnum,whos=None):
-        super(Prophet,self).__init__(self,vlgnum,whos=whos)
+        super(Prophet,self).__init__(vlgnum,whos=whos)
         self.name="Prophet"
         self.roleknown={} #{id:'Wolf'/'Villager'}
     def what_is_he(pl):
@@ -118,7 +123,7 @@ class Hunter(Villager):
 
 class Witcher(Villager):
     def __init__(self,vlgnum,whos=None):
-        super(Witcher,self).__init__(self,vlgnum,whos=None)
+        super(Witcher,self).__init__(vlgnum,whos=None)
         drug=maxdrug
         poinson=maxpoinson
     def save_he(self,pl):
@@ -134,7 +139,7 @@ class Witcher(Villager):
 
 class Guard(Villager):
     def __init__(self,vlgnum,whos=None):
-        super(Guard, self).__init__(self,vlgnum,whos=None)
+        super(Guard, self).__init__(vlgnum,whos=None)
         last_guard=None
     def guard_he(self,pl):
         if not (pl is self.last_guard):
@@ -148,6 +153,7 @@ class Guard(Villager):
 
 
 #=========FUNC====================
+Base.RoleCard.vote2exc_result=[] #add vote2exc_result to Base.RoleCard (id voted,id get vote)
 
 def is_sb_win():
     pass
